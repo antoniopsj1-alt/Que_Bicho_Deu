@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="Portfólio de Aplicações Web, Antônio Pereira de Souza Junior, aplicativos, jogo do bicho, resultado, Desenvolvedor Front-End">
+<meta name="author" content="Antônio Pereira de Souza Junior">
+<title>Que Bicho Deu?</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="phone-shell">
+
+  <!-- ============================================================ -->
+  <!-- TELA 1 — HOME                                                 -->
+  <!-- ============================================================ -->
+  <section id="screen-home" class="screen active">
+    <header class="home-header px-5 pt-8 pb-7">
+      <div class="flex items-center gap-3">
+        <div class="brand-badge">
+          <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6" style="color:#0C2118">
+            <path d="M12 3c3.5 2 5.5 5.5 5.5 9a5.5 5.5 0 0 1-11 0C6.5 8.5 8.5 5 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 12v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="display text-xl font-bold leading-tight" style="color:var(--ink)">QUE BICHO DEU?</h1>
+          <p class="text-xs mt-0.5" style="color:var(--muted)">Resultados oficiais · Loteria Federal</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="px-5 pt-8 pb-10">
+      <p class="text-sm mb-5" style="color:var(--muted)">O QUE VOCÊ QUER CONFERIR AGORA?</p>
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Botão: Jogo do Bicho Passado -->
+        <button id="btn-passado" class="home-btn" data-mode="passado">
+          <span class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6"><path d="M3 12a9 9 0 1 0 3-6.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 4v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l2.5 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="btn-label">Jogo do Bicho<br>Passado</span>
+        </button>
+
+        <!-- Botão: Jogo do Bicho de Hoje -->
+        <button id="btn-hoje" class="home-btn" data-mode="atual">
+          <span class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.4 19.6 6 18M18 6l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <span class="btn-label">Jogo do Bicho<br>de Hoje</span>
+        </button>
+      </div>
+
+      <p class="text-xs mt-8 leading-relaxed" style="color:var(--muted-2)">
+        ESTE APLICATIVO TEM FINALIDADE APENAS INFORMATIVA. DEDICO ESTE TRABALHO À MINHA QUERIDA MÃE, <strong>ANTÔNIA RODRIGUÊS DE SOUZA</strong>.
+      </p>
+    </main>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- TELA 2 — RESULTADOS (Atual / Passado)                        -->
+  <!-- ============================================================ -->
+  <section id="screen-results" class="screen">
+    <header class="results-header px-5 pt-6 pb-5 sticky top-0 z-30">
+      <div class="flex items-center justify-between mb-5">
+        <button id="btn-back" class="icon-btn" aria-label="Voltar para o início">
+          <svg viewBox="0 0 24 24" fill="none" class="w-4.5 h-4.5"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <h2 class="display text-2xl font-bold" style="color:var(--ink)">Resultados</h2>
+        <button id="btn-mute" class="icon-btn" aria-label="Ativar ou desativar a música de fundo" aria-pressed="false">
+          <svg id="icon-sound-on" viewBox="0 0 24 24" fill="none" class="w-4.5 h-4.5"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16.5 9a4.5 4.5 0 0 1 0 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg id="icon-sound-off" viewBox="0 0 24 24" fill="none" class="w-4.5 h-4.5 hidden"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 9l4.5 6M20.5 9 16 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <!-- Abas -->
+      <div class="tab-bar">
+        <div id="tab-indicator" class="tab-indicator"></div>
+        <button class="tab-btn" data-tab="atual">Atual</button>
+        <button class="tab-btn" data-tab="passado">Passado</button>
+      </div>
+    </header>
+
+    <main class="px-5 pt-6 pb-14">
+      <!-- Nome do jogo em destaque -->
+      <h3 class="display text-4xl font-bold mb-2">Jogo do Bicho</h3>
+      <p id="draw-subtitle" class="text-lg mb-2" style="color:#E5F5FF">Extração Federal</p>
+      <p id="fonte-dados" class="text-xs mb-5" style="color:var(--muted-2)">🟡 Sem conexão com a Loteria Federal — exibindo o último resultado salvo</p>
+
+      <!-- Metadados do sorteio -->
+      <div class="meta-row p-4 grid grid-cols-3 gap-2 mb-7">
+        <div class="meta-chip px-2 py-2.5 text-center">
+          <p class="text-[10px] uppercase tracking-wide" style="color:var(--muted-2)">Concurso</p>
+          <p id="meta-concurso" class="num-mono text-xl font-bold mt-1">—</p>
+        </div>
+        <div class="meta-chip px-2 py-2.5 text-center">
+          <p class="text-[10px] uppercase tracking-wide" style="color:var(--muted-2)">Data</p>
+          <p id="meta-data" class="num-mono text-xl font-bold mt-1">—</p>
+        </div>
+        <div class="meta-chip px-2 py-2.5 text-center">
+          <p class="text-[10px] uppercase tracking-wide" style="color:var(--muted-2)">Dia</p>
+          <p id="meta-dia" class="num-mono text-xl font-bold mt-1">—</p>
+        </div>
+      </div>
+
+      <!-- Lista de prêmios -->
+      <div id="prize-list" class="flex flex-col gap-3"></div>
+    </main>
+  </section>
+
+  <!-- Player de áudio de fundo (controlado via JS) -->
+  <!-- 👉 Caminho ajustado para onde o arquivo está salvo: assets/animais/musica-fundo.mp3 -->
+  <audio id="bg-audio" src="assets/animais/musica-fundo.mp3" preload="auto" loop></audio>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
